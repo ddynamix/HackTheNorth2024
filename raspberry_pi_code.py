@@ -11,17 +11,17 @@ DELAY_DEVICE = 2
 
 
 # GitHub repository details
-repo_owner = "jotigokaraju"
-repo_name = "sensescript"
+repo_owner = "REDACTED"
+repo_name = "REDACTED"
 
-file_path_instructions = "instructions.txt"
+file_path_instructions = "REDACTED"
 
 # GitHub API URL
 api_url = f"https://api.github.com/repos/{repo_owner}/{repo_name}/contents/{file_path_instructions}"
 
 
 #HIDE
-access_token = "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"
+access_token = "REDACTED"
 
 
 step_sleep = 0.001                                                              
@@ -418,7 +418,7 @@ while START:
 
         # Prepare data
         data = {
-            "message": "Update instructions.txt",
+            "message": "Update REDACTED",
             "content": new_content_encoded,
             "sha": response_data["sha"]
         }
