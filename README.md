@@ -1,3 +1,6 @@
+Note to organizers: we coded our Raspberry Pi stuff directly on the Pi so we pushed it now. Also if you want the commits for the streamlit app please ask one of us because its on a private repo and all the comms go through there so we can't make it public.
+
+
 # 🔭 WHAT IS PERCEIV/IO?
 
 PERCEIV/IO is an innovative tool that utilizes the latest AI advancements to assist persons with visual and/or auditory impairments. Approximately [160 million people around the world](https://www.senseinternational.org.uk/our-work/understanding-deafblindness/) have some form of deafblindness that affects their day-to-day lives. PERCEIV/IO was originated from the ground up as both the hardware and software that we are prototyping in this hackathon project.
