@@ -11,10 +11,10 @@ DELAY_DEVICE = 2
 
 
 # GitHub repository details
-repo_owner = "jotigokaraju"
-repo_name = "sensescript"
+repo_owner = REDACTED
+repo_name = REDACTED
 
-file_path_instructions = "instructions.txt"
+file_path_instructions = REDACTED
 #!/usr/bin/env python3
 import requests
 import base64
@@ -58,7 +58,7 @@ api_url = f"https://api.github.com/repos/{repo_owner}/{repo_name}/contents/{file
 
 
 #HIDE
-access_token = "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"
+n = "REDACTED"
 
 
 step_sleep = 0.001                                                              
@@ -393,7 +393,7 @@ while START:
 
     
     # Get content
-    response = requests.get(api_url, headers={"Authorization": f"Bearer {access_token}"})
+    response = requests.get(api_url, headers={"Authorization": f"Bearer {n}"})
     response_data = response.json()
 
          
@@ -441,7 +441,7 @@ while START:
         }
 
         # Update
-        update_response = requests.put(api_url, headers={"Authorization": f"Bearer {access_token}"}, json=data)
+        update_response = requests.put(api_url, headers={"Authorization": f"Bearer {n}"}, json=data)
 
         if update_response.status_code == 200:
             print("Sent!")
@@ -451,7 +451,7 @@ while START:
     time.sleep(DELAY_LISTENER)
 
 #HIDE
-access_token = "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"
+n = "REDACTED"
 
 
 step_sleep = 0.001                                                              
@@ -786,7 +786,7 @@ while START:
 
     
     # Get content
-    response = requests.get(api_url, headers={"Authorization": f"Bearer {access_token}"})
+    response = requests.get(api_url, headers={"Authorization": f"Bearer {n}"})
     response_data = response.json()
 
          
@@ -834,7 +834,7 @@ while START:
         }
 
         # Update
-        update_response = requests.put(api_url, headers={"Authorization": f"Bearer {access_token}"}, json=data)
+        update_response = requests.put(api_url, headers={"Authorization": f"Bearer {n}"}, json=data)
 
         if update_response.status_code == 200:
             print("Sent!")
@@ -847,7 +847,7 @@ api_url = f"https://api.github.com/repos/{repo_owner}/{repo_name}/contents/{file
 
 
 #HIDE
-access_token = "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"
+n = "REDACTED"
 
 
 step_sleep = 0.001                                                              
@@ -1186,7 +1186,7 @@ while START:
 
     
     # Get content
-    response = requests.get(api_url, headers={"Authorization": f"Bearer {access_token}"})
+    response = requests.get(api_url, headers={"Authorization": f"Bearer {n}"})
     response_data = response.json()
 
          
@@ -1234,7 +1234,7 @@ while START:
         }
 
         # Update
-        update_response = requests.put(api_url, headers={"Authorization": f"Bearer {access_token}"}, json=data)
+        update_response = requests.put(api_url, headers={"Authorization": f"Bearer {n}"}, json=data)
 
         if update_response.status_code == 200:
             print("Sent!")
