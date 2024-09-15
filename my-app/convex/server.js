@@ -23,7 +23,7 @@ const filePath = "instructions.txt";
 const apiUrl = `https://api.github.com/repos/${repoOwner}/${repoName}/contents/${filePath}`;
 
 // Your GitHub access token
-const accessToken = "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";
+const accessToken = process.env.GHUB_ACCESS_TOKEN;
 let fileName;
 let description;
 let newFileName;
