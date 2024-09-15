@@ -51,7 +51,6 @@ const SingleFileUploader = () => {
             console.error('Error sending transcription to Raspberry Pi:', error);
         }
     };
-
     return (
         <>
             <input type="file" onChange={handleFileChange} />
@@ -80,4 +79,4 @@ const SingleFileUploader = () => {
     );
 };
 
-export default SingleFileUploader;
+export default SingleFileUploader; 

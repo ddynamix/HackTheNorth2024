@@ -14,6 +14,7 @@ function App() {
       </main>
       <footer className="app-footer">
       </footer>
+      <p>Note: Do not press the upload button or reload the page until after the Braille translation is finished.</p>
     </div>
   );
 }

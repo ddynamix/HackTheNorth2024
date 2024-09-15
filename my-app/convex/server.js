@@ -30,7 +30,15 @@ let newFileName;
 
 app.use(cors());
 
+function sleepSync(ms) {
+  const start = Date.now();
+  while (Date.now() - start < ms) {
+      // Busy-wait loop (blocks the event loop)
+  }
+}
+
 function convertToMp3(inputFilePath, outputFilePath) {
+    sleepSync(2000);
     ffmpeg(inputFilePath)
         .toFormat('mp3')
         .on('end', () => {
@@ -54,11 +62,11 @@ async function transcriptionCreation() {
       messages: [
         {
           role: "system",
-          content: "Shorten the sentence to about 25% of its original length, while still prioritizing keeping detail, and if this is not a complete sentence, return the words, 'Sorry, I could not understand. '",
+          content: "Shorten the sentence to about 50% of its original length, while still prioritizing keeping detail. If it is not a complete sentence, return the words, 'Sorry, I could not understand'. If it is a complete sentence, return the result without any extra words.",
         },
         {
           role: "user",
-          content: `Here is the sentence: ${transcription.text}`,
+          content: `${transcription.text}`,
         },
       ],
       model: "llama3-8b-8192",
@@ -161,8 +169,7 @@ const storage = multer.diskStorage({
     filename: function (req, file, cb) {
       // Use the original name of the file
       const ext = path.extname(file.originalname); // Get the file extension
-      const basename = path.basename(file.originalname, ext); // Get the base name without extension
-      newFileName = `${basename}-${Date.now()}${ext}`; // Add timestamp to ensure unique name
+      newFileName = `old${ext}`; // Add timestamp to ensure unique name
       cb(null, newFileName);
       main();
     }
@@ -190,6 +197,7 @@ app.listen(port, () => {
 });
 
 function main() {
+  try {
     const inputVideo = path.join('upload', newFileName);
     const outputAudio = path.join('upload', 'test.mp3');
 
@@ -199,8 +207,11 @@ function main() {
     
     // Function to update the file
     transcriptionCreation();
-
     unlinkFiles();
+
+  } catch (e) {
+    unlinkFiles();
+  }
     // Call the function with your transcription content
     updateGitHubFile(description);
 }
