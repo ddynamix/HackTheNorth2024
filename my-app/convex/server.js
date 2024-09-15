@@ -144,9 +144,7 @@ async function updateGitHubFile(newContent) {
     }
 }
 
-/*
-    RUN CODE
-*/
+
 if (!fs.existsSync('upload')) {
     fs.mkdirSync('upload');
 }
