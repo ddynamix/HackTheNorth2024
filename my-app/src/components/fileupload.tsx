@@ -17,46 +17,18 @@ const SingleFileUploader = () => {
             try {
                 // Create a FormData object and append the video file
                 const formData = new FormData();
-                formData.append('file', file);
+                formData.append('video', file);
+                console.log(file);
                 
                 // Send the file to your backend or directly to the Groq API
                 // Assuming backend processes the file and sends it to Groq for transcription
-                const response = await fetch('https://<your_server_endpoint>', {
+                const response = await fetch('http://localhost:3000/upload', {
                     method: 'POST',
                     body: formData,
                 });
-
-                const data = await response.json();
-                
-                // Assuming that the backend responds with the transcription
-                console.log('Transcription:', data.transcription);
-                setTranscription(data.transcription);
-
-                // Optionally, you can now send this transcription to a Raspberry Pi
-                await sendToRaspberryPi(data.transcription);
             } catch (error) {
-                console.error('Error processing file:', error);
+                console.error('Error processing file: ' + error);
             }
-        }
-    };
-
-    const sendToRaspberryPi = async (transcription: string) => {
-        try {
-            const response = await fetch('http://<raspberry_pi_ip_address>/transcription', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify({ transcription }),
-            });
-
-            if (response.ok) {
-                console.log('Transcription sent to Raspberry Pi successfully');
-            } else {
-                console.error('Failed to send transcription to Raspberry Pi');
-            }
-        } catch (error) {
-            console.error('Error sending transcription to Raspberry Pi:', error);
         }
     };
 
