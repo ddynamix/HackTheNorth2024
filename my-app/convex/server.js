@@ -19,8 +19,10 @@ const repoOwner = "jotigokaraju";
 const repoName = "sensescript";
 const filePath = "instructions.txt";
 
+// GitHub API URL
 const apiUrl = `https://api.github.com/repos/${repoOwner}/${repoName}/contents/${filePath}`;
 
+// Your GitHub access token
 const accessToken = process.env.GHUB_ACCESS_TOKEN;
 let fileName;
 let description;
