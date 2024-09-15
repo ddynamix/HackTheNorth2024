@@ -27,20 +27,38 @@ const SingleFileUploader = () => {
                     body: formData,
                 });
             } catch (error) {
-                console.error('Error processing file: ' + error);
+                console.error('Error processing file:', error);
             }
+        }
+    };
+
+    const sendToRaspberryPi = async (transcription: string) => {
+        try {
+            const response = await fetch('http://<raspberry_pi_ip_address>/transcription', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({ transcription }),
+            });
+
+            if (response.ok) {
+                console.log('Transcription sent to Raspberry Pi successfully');
+            } else {
+                console.error('Failed to send transcription to Raspberry Pi');
+            }
+        } catch (error) {
+            console.error('Error sending transcription to Raspberry Pi:', error);
         }
     };
 
     return (
         <>
             <input type="file" onChange={handleFileChange} />
-            <p>No file chosen</p>
 
             {file && (
                 <div>
-                    <p>File details:</p>
-                    <p>Name: {file.name}</p>
+
                     <p>Type: {file.type}</p>
                     <p>Size: {file.size} bytes</p>
                 </div>
