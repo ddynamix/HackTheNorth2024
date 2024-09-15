@@ -1,5 +1,42 @@
-#root {
-  text-align: left;
+/* General styles */
+body {
+  font-family: 'Arial', sans-serif;
+  background: url('assets/Goose.jpg') no-repeat center center fixed;
+  background-size: cover;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: rgba(23, 77, 158, 0.8); /* Slight transparency */
+}
+
+.app-container {
+  background-color: #f6a94c;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  width: 400px;
+  max-width: 100%;
+}
+
+.app-header {
+  background-color: #67b23c;
+  color: #ffffff;
+  padding: 1rem;
+  text-align: center;
+}
+
+.app-main {
+  padding: 2rem;
+}
+
+.app-footer {
+  background-color: #f6a94c;
+  color: #893131;
+  padding: 1rem;
+  text-align: center;
 }
 
 .input-group {
@@ -12,8 +49,14 @@
 .submit {
   margin-top: 1rem;
   background-color: #4f8c00;
+  color: #ffffff;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
 }
 
 .submit:hover {
-  border-color: #d6d8fa;
+  background-color: #3e6d00;
 }

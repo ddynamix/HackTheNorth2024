@@ -42,7 +42,7 @@ const SingleFileUploader = () => {
 
     const sendToRaspberryPi = async (transcription: string) => {
         try {
-            const response = await fetch('http://<raspberry_pi_ip_address>/transcription', {
+            const response = await fetch('http://10.37.101.146/transcription', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -63,12 +63,10 @@ const SingleFileUploader = () => {
     return (
         <>
             <input type="file" onChange={handleFileChange} />
-            <p>No file chosen</p>
 
             {file && (
                 <div>
-                    <p>File details:</p>
-                    <p>Name: {file.name}</p>
+
                     <p>Type: {file.type}</p>
                     <p>Size: {file.size} bytes</p>
                 </div>
