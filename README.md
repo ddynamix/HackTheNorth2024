@@ -54,7 +54,7 @@ We also want to relocate the camera and have it wirelessly communicate with the 
 
 And finally, we are waiting for the day where AI technology and hardware reaches a point where we can run all models locally, without the need for a massive power bank or network connection. That would truly untether the user from any external requirements for a real feeling of freedom.
 
-
+Credit to Matthew Montrone for the goose background photo. 
 
 
 ###🪿 Thank you to all who showed interested in PERCEIV/IO, and a huge congratulations to _all_ hackers who submitted in time. **We did it!**
