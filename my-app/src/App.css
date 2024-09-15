@@ -12,6 +12,11 @@ body {
   background-color: rgba(23, 77, 158, 0.8); /* Slight transparency */
 }
 
+.app-header img {
+  max-width: 300px; /* Adjust the width as needed */
+  
+}
+
 .app-container {
   background-color: #f6a94c;
   border-radius: 8px;
@@ -22,9 +27,9 @@ body {
 }
 
 .app-header {
-  background-color: #67b23c;
+  background-color: #f6a94c;
   color: #ffffff;
-  padding: 1rem;
+  padding: 0rem;
   text-align: center;
 }
 
